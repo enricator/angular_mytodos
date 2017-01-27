@@ -4,6 +4,12 @@ body {
   padding-bottom: 20px;
 }
 
+/* */
+.todo {
+  padding: 5px 0px 0px 20px; 
+  cursor: move;
+}
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
