@@ -1,7 +1,13 @@
 'use strict';
 
 angular.module('mytodoApp')
-  .controller('MainCtrl', function ($scope, localStorageService) {
+  .controller('MainCtrl', ['$scope', 'localStorageService', function ($scope, localStorageService) {
+    $scope.appInfo = {
+        name: "MyTodos",
+        desc: "a (very) simple Angular app",
+        version: '0.1.1'
+    };
+
     var todosInStore = localStorageService.get('todos');
 
     $scope.todos = todosInStore && todosInStore.split('\n') || [];
@@ -17,4 +23,4 @@ angular.module('mytodoApp')
     $scope.removeTodo = function (index) {
         $scope.todos.splice(index,1);
       };
-  });
+  }]);
